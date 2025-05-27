@@ -53,10 +53,10 @@ export const processFile = (filePath: string): Promise<RowWithErrors[]> => {
         return { row, errors };
       });
 
-      fs.unlinkSync(filePath);
+      // fs.unlinkSync(filePath);
       resolve(results);
     } else {
-      fs.unlinkSync(filePath);
+      // fs.unlinkSync(filePath);
       reject(new Error("Unsupported file type."));
     }
   });

@@ -31,6 +31,7 @@ export const FileUpload: React.FC<Props> = ({ onUploadComplete }) => {
       const res = await axiosInstance.post("/upload", formData);
       onUploadComplete(res.data);
     } catch (error: any) {
+      console.log(error.response.data)
       alert(error.response?.data?.error || "Upload failed.");
     }
     setLoading(false);
@@ -38,6 +39,7 @@ export const FileUpload: React.FC<Props> = ({ onUploadComplete }) => {
 
   return (
     <div className="flex gap-4 items-center">
+
       <Input type="file" onChange={handleFileChange} />
       <Button onClick={handleUpload} disabled={!file || loading}>
         {loading ? "Uploading..." : "Upload File"}
