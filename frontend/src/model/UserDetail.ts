@@ -15,7 +15,7 @@ const UserDetailSchema = new Schema(
       unique: true
     },
     contact: {
-      type: Number,
+      type: String,
       required: true,
     },
     name: {
